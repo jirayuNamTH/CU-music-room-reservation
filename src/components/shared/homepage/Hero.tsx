@@ -8,7 +8,7 @@ function Hero() {
     <section id="search" className="py-24 sm:py-32 lg:py-40 bg-muted">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter text-foreground">
-          Find and book unique spaces.
+          Find and reserve your session!.
         </h1>
         <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
           From meeting rooms to music studios, discover and book the perfect space for any activity, all in one place.
@@ -19,7 +19,7 @@ function Hero() {
           <form className="flex flex-col sm:flex-row gap-3">
             <Input
               type="text"
-              placeholder="What are you looking for? (e.g. 'podcast studio')"
+              placeholder="Enter the studio or organization name"
               className="h-12 text-base flex-grow"
             />
             <Button type="submit" size="lg" className="h-12 text-base sm:w-auto">

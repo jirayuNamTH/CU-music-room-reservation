@@ -1,7 +1,9 @@
 "use client";
 
+import * as React from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { signIn } from "next-auth/react"
 import {
   Card,
   CardContent,
@@ -33,9 +35,11 @@ export function LoginForm({
             <form>
                 <FieldGroup>
                 <Field>
-                    <Button variant="outline" type="button">
+                    <Button variant="outline" size="lg" className="w-full" asChild>
+                    <a href="https://msroom.onrender.com/api/auth/google">
                     <img src="asset/icon/google.svg" alt="Google Logo" className="h-5 w-5 mr-2" />
                     Login or Sign up with Google
+                    </a>
                     </Button>
                 </Field>
                 </FieldGroup>

@@ -2,12 +2,11 @@
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { CalendarDays, Search, Bolt, ArrowRight, Menu } from "lucide-react";
-import authen from '@next'
-
+import {  Menu } from "lucide-react";
+import { useRouter } from "next/navigation";
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm">
@@ -20,13 +19,16 @@ function Header() {
         
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6">
-          <a href="" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+          <a href="#search" className="text-sm font-medium text-muted-foreground hover:text-foreground">
             Search
           </a>
-          <a href="" className="text-sm font-medium text-muted-foreground hover:text-foreground">
-            How it Works
+          <a href="#music-rooms" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+            Music Rooms
           </a>
-          <Button variant="default" size="sm" className="ml-2 font-bold font-color:white" asChild>
+          <a href="" className="text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => router.push(`/dashboard`)}>
+            Create room
+          </a>
+          <Button variant="default" size="sm" className="ml-2 font-bold font-color:white" asChild onClick={() => router.push(`/login`)}>
             <a href="/login">Login/Sign up</a>
           </Button>
         </nav>
@@ -46,14 +48,14 @@ function Header() {
             <a href="#search" className="block rounded-md p-2 text-base font-medium text-muted-foreground hover:bg-muted">
               Search
             </a>
-            <a href="#features" className="block rounded-md p-2 text-base font-medium text-muted-foreground hover:bg-muted">
-              How it Works
+            <a href="#music-rooms" className="block rounded-md p-2 text-base font-medium text-muted-foreground hover:bg-muted">
+              Music Rooms
             </a>
-            <Button variant="outline" className="w-full justify-center" asChild>
-              <a href="/login">Log In</a>
-            </Button>
-            <Button variant="default" className="w-full justify-center" asChild>
-              <a href="#list-your-space">List Your Space</a>
+            <a href="" className="block rounded-md p-2 text-base font-medium text-muted-foreground hover:bg-muted" onClick={() => router.push(`/dashboard`)}>
+              Create room
+            </a>
+            <Button variant="default" className="w-full justify-center" asChild onClick={() => router.push(`/login`)}>
+              <a href="#list-your-space">Login/Sign up</a>
             </Button>
           </div>
         </div>
